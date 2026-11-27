@@ -1,0 +1,300 @@
+﻿/* Full-bleed white band: breaks out of the centered .main-content container
+   (same technique as .club-section / .faq-section). */
+.team-section {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 56px 5%;
+  background: #ffffff;
+}
+
+/* Centered content container */
+.team-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-bottom: 28px;
+}
+
+.team-header-text {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.team-eyebrow {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #315d42;
+}
+
+.team-title {
+  margin: 0 0 8px 0;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #15552f;
+  text-align: left;
+}
+
+.team-subtitle {
+  margin: 0;
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 28px;
+  color: #777777;
+}
+
+.team-all-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  align-self: center;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #15552f;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.team-all-link:hover {
+  text-decoration: underline;
+}
+
+.team-all-link:focus-visible {
+  outline: 3px solid #15552f;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.team-status {
+  margin: 0;
+  padding: 24px 0;
+  font-size: 14px;
+  color: #777777;
+}
+
+/* ---------- Cards grid ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch; /* equal card heights */
+}
+
+.team-card {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e5eae6;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(32, 53, 43, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.team-card:hover {
+  /* transform: translateY(-4px); */
+  border-color: #b7d4c0;
+  box-shadow: 0 8px 20px rgba(21, 85, 47, 0.12);
+}
+
+/* ---------- Photo ---------- */
+.team-photo {
+  flex-shrink: 0;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: #f1f3f2;
+}
+
+.team-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f3f2;
+  color: #b6bcb8;
+}
+
+/* ---------- Info ---------- */
+.team-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.team-name {
+  margin: 0 0 4px 0;
+  font-family: var(--heading);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #20352b;
+}
+
+.team-position {
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #315d42;
+}
+
+/* Concise description: max 3 lines (full text available in the tooltip and on /employees) */
+.team-responsibilities {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  line-height: 28px;
+  color: #657068;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+/* ---------- Contact ---------- */
+.team-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: auto; /* keeps the contact area aligned at the bottom of every card */
+  padding-top: 14px;
+  border-top: 1px solid #e5eae6;
+}
+
+.team-contact-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 8px;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #15552f;
+  text-decoration: none;
+}
+
+.team-contact-link span {
+  min-width: 0;
+  overflow-wrap: anywhere; /* long e-mail addresses wrap instead of overflowing */
+}
+
+.team-contact-link:hover span {
+  color: #15552f;
+  text-decoration: underline;
+}
+
+.team-contact-link:focus-visible {
+  outline: 2px solid #15552f;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.team-contact-icon {
+  flex-shrink: 0;
+  color: #15552f;
+}
+
+.team-council {
+  margin-top: 32px;
+  padding: 28px;
+  border: 1px solid #e5eae6;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(32 53 43 / 4%);
+}
+
+.team-council summary {
+  min-height: 44px;
+  align-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: #20352b;
+}
+
+.team-council summary:focus-visible {
+  outline: 2px solid #15552f;
+  outline-offset: 4px;
+}
+
+.team-council-body {
+  padding-top: 16px;
+}
+
+.team-council-entry {
+  padding: 24px 0;
+  border-top: 1px solid #e5eae6;
+}
+
+.team-council-entry:last-of-type {
+  border-bottom: 1px solid #e5eae6;
+  margin-bottom: 16px;
+}
+
+/* ---------- Responsive ---------- */
+/* Tablet: 2 cards per row */
+@media (max-width: 960px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 600px) {
+  .team-section {
+    padding: 40px 5%;
+  }
+
+  .team-title {
+    font-size: 24px;
+  }
+
+  .team-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-card {
+    transition: none;
+  }
+
+  .team-card:hover {
+    transform: none;
+  }
+}
+
+
+

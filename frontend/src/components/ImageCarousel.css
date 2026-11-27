@@ -1,0 +1,174 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 11px;
+  background: #EAF1EC;
+}
+
+.carousel-slides {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 0;
+}
+
+.carousel-slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 11px;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.carousel-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Navigation Buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: bold;
+  color: #15552F;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-button:hover {
+  background: #EAF1EC;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-button-prev {
+  left: 16px;
+}
+
+.carousel-button-next {
+  right: 16px;
+}
+
+/* Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0;
+  max-width: calc(100% - 24px);
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 20px;
+  background: rgb(32 53 43 / 55%);
+  z-index: 1;
+}
+
+.carousel-indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 0;
+  background: radial-gradient(circle, rgb(255 255 255 / 50%) 3px, transparent 4px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-indicator:hover {
+  background: radial-gradient(circle, #fff 4px, transparent 5px);
+}
+
+.carousel-indicator.active {
+  background: radial-gradient(circle, #fff 4px, transparent 5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-slides {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-button {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+  .carousel-button-prev {
+    left: 8px;
+  }
+
+  .carousel-button-next {
+    right: 8px;
+  }
+
+  .carousel-indicators {
+    bottom: 12px;
+  }
+
+  .carousel-indicator {
+    width: 28px;
+    height: 28px;
+  }
+
+  .carousel-indicator.active {
+    width: 28px;
+  }
+}
+
+/* Accessibility */
+.carousel-slide:focus-visible,
+.carousel-button:focus-visible,
+.carousel-indicator:focus-visible {
+  outline: 3px solid #15552F;
+  outline-offset: -3px;
+}
+
+/* Animation for slide transitions */
+@keyframes announcementSlideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.carousel-slide {
+  animation: announcementSlideIn 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide { animation: none; }
+  .carousel-button,
+  .carousel-indicator { transition: none; }
+}

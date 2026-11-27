@@ -1,0 +1,141 @@
+/* Shared section spacing is provided by Home.css. */
+.faq-section {
+  margin: 0 calc(50% - 50vw);
+  background: #fff;
+}
+
+.faq-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  max-width: 850px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.faq-title {
+  margin: 0 0 16px;
+  line-height: 1.25;
+  color: #20352b;
+}
+
+.faq-subtitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 28px;
+  color: #657068;
+}
+
+.faq-list {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e5eae6;
+}
+
+/* Native summary provides keyboard activation and expanded-state semantics. */
+.faq-question {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  min-height: 80px;
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #20352b;
+  transition: color 0.2s ease;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question:hover {
+  color: #15552f;
+}
+
+.faq-question:focus-visible {
+  outline: 2px solid #15552f;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.faq-question-text {
+  min-width: 0;
+}
+
+.faq-disclosure-icon {
+  flex-shrink: 0;
+  color: #15552f;
+}
+
+.faq-item[open] .faq-icon-vertical {
+  display: none;
+}
+
+.faq-item[open] .faq-answer {
+  animation: faq-answer-enter 0.25s ease-out both;
+}
+
+.faq-answer-text {
+  margin: 0;
+  padding: 0 44px 28px 0;
+  font-size: 15px;
+  line-height: 32px;
+  color: #657068;
+  overflow-wrap: anywhere;
+}
+
+.faq-answer-text a {
+  color: #15552f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.faq-answer-text a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.faq-answer-text a:focus-visible {
+  outline: 2px solid #15552f;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@keyframes faq-answer-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-answer-text {
+    padding-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-question {
+    transition: none;
+  }
+
+  .faq-item[open] .faq-answer {
+    animation: none;
+  }
+}

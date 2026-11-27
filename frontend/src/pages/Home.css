@@ -1,0 +1,563 @@
+.home-page {
+  width: 100%;
+  --home-gutter: 48px;
+  --home-section-space: 88px;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Shared homepage geometry; component grids and interactive behaviour stay local. */
+.home-page :is(.notices-section, .news-section, .qa-section, .community-section,
+  .ri-section, .team-section, .club-section, .faq-section) {
+  margin: 0 calc(50% - 50vw);
+  padding: var(--home-section-space) var(--home-gutter);
+}
+
+.home-page :is(.notices-inner, .news-inner, .qa-inner, .community-inner,
+  .ri-inner, .team-inner, .club-inner, .faq-inner) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.home-page :is(.news-section, .ri-section) {
+  background: var(--page-bg);
+}
+
+.home-page :is(.notices-section, .qa-section, .team-section, .faq-section) {
+  background: var(--bg);
+}
+
+.home-page .club-section {
+  background: #f0f4ef;
+}
+
+.home-page .community-section {
+  background: var(--accent);
+}
+
+.home-page :is(.community-text, .community-gallery-subtitle) {
+  color: var(--on-dark-muted);
+}
+
+.home-page :is(.news-grid, .qa-grid, .community-grid, .team-grid,
+  .club-events-grid, .ri-grid) {
+  gap: 24px;
+}
+
+.home-page :is(.news-subtitle, .notices-subtitle, .team-subtitle, .faq-subtitle) {
+  color: var(--text);
+}
+
+@media (max-width: 1024px) {
+  .home-page {
+    --home-gutter: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    --home-gutter: 20px;
+    --home-section-space: 64px;
+  }
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page h4 {
+  font-family: var(--heading);
+  font-weight: 500;
+  letter-spacing: -0.4px;
+}
+
+/* Make every section heading (h2) on the Home page the same size as
+   .notices-title in the notices-section: 26px desktop, 24px on mobile. */
+.home-page .notices-title,
+.home-page .news-heading,
+.home-page .qa-heading,
+.home-page .community-gallery-heading,
+.home-page .ri-section-title,
+.home-page .team-title,
+.home-page .faq-title,
+.home-page .club-section .section-title {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .home-page .notices-title,
+  .home-page .news-heading,
+  .home-page .qa-heading,
+  .home-page .community-gallery-heading,
+  .home-page .ri-section-title,
+  .home-page .team-title,
+  .home-page .faq-title,
+  .home-page .club-section .section-title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+/* Hero Section
+   Full-bleed banner: breaks out of the centered .main-content container
+   (same technique as the other home sections). The negative top margin cancels
+   the container's top padding so the banner sits directly under the header. */
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center; /* vertically centered content */
+  justify-content: flex-start; /* content aligned to the left */
+  box-sizing: border-box;
+  min-height: 520px;
+  margin-top: -40px;
+  margin-bottom: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 88px var(--home-gutter);
+  background-image: url('../assets/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1f3d2b; /* fallback while the photo loads */
+  overflow: hidden;
+  text-align: left;
+}
+
+/* Keep text readable on the left while revealing the photograph on the right. */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10, 42, 24, 0.88) 0%, rgba(10, 42, 24, 0.62) 45%, rgba(10, 42, 24, 0.12) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 40%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  animation: hero-enter 0.7s ease-out both;
+}
+
+.hero-eyebrow {
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c5d8c9;
+}
+
+.home-page .hero-title {
+  max-width: 680px;
+  margin: 0 0 24px;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hero-subtitle {
+  max-width: 580px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #e1ebe3;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Matches the .main-content top padding at each breakpoint (see Layout.css) */
+@media (max-width: 1024px) {
+  .hero-section {
+    margin-top: -24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    margin-top: -20px;
+    min-height: 500px;
+    padding: 64px var(--home-gutter);
+  }
+
+  .home-page .hero-title {
+    font-size: 42px;
+  }
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content {
+    animation: none;
+  }
+}
+
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s;
+}
+
+/* .stat-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+} */
+
+.stat-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.stat-info h3 {
+  font-size: 19.8px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 4px 0;
+}
+
+.stat-info p {
+  font-size: 15.4px;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Features Section */
+.features-section {
+  margin-bottom: 64px;
+}
+
+.section-title {
+  font-size: 35.2px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+} 
+
+.feature-icon {
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.feature-card h3 {
+  font-size: 24.2px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 12px 0;
+}
+
+.feature-card p {
+  font-size: 17.6px;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.feature-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 17.6px;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.feature-link:hover {
+  gap: 8px;
+  opacity: 0.8;
+}
+
+/* Info Section - full-bleed deep forest green band (same as the "Klub KrÄ…g" section) */
+.info-section {
+  margin-bottom: 64px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 56px 24px;
+  background: #15552f; /* deep forest green */
+  border-top: 1px solid #0f4024;
+  border-bottom: 1px solid #0f4024;
+}
+
+/* Keeps the content aligned with the rest of the page (max-width of .main-content minus its padding) */
+.info-section .info-inner {
+  max-width: 1352px;
+  margin: 0 auto;
+}
+
+.info-section .info-card {
+  background: transparent;
+  border: none !important;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* No shadow / hover effect. `.info-card` is also styled in Contact.css and RadaOsiedla.css
+     (global CSS), so these are reset explicitly for the home page only. */
+  box-shadow: none;
+  transition: none;
+}
+
+.info-section .info-card:hover {
+  box-shadow: none;
+  transform: none;
+  background: transparent;
+  border: none !important;
+}
+
+
+.info-section .info-card h2 {
+  font-size: 30.8px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.info-section .info-card p {
+  font-size: 17.6px; /* <- change this value to resize the paragraph */
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0 auto;
+  text-align: center !important;
+  max-width: 800px;
+}
+
+
+/* Additional Info Section */
+.additional-info-section {
+  margin-bottom: 48px;
+}
+
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.info-feature-card {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-feature-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.duty-dates {
+  font-size: 17.6px;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 24px 0;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+
+.contact-item:hover {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--accent);
+}
+
+.contact-role {
+  font-size: 16.5px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.contact-phone {
+  font-size: 17.6px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.contact-phone:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+
+.hours-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--accent);
+}
+
+.hours-item .day {
+  font-size: 16.5px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.hours-item .time {
+  font-size: 17.6px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .section-title {
+    font-size: 28.6px;
+    margin-bottom: 24px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 24px;
+  }
+
+  .info-section {
+    padding: 32px 16px;
+    margin-bottom: 40px;
+  }
+
+  .info-section .info-card {
+    padding: 0;
+  }
+
+  .info-section .info-card h2 {
+    font-size: 26.4px;
+  }
+
+  .info-section .info-card p {
+    font-size: 17.6px; /* <- mobile size (max-width: 768px) */
+  }
+
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .info-feature-card {
+    padding: 24px;
+  }
+
+  .info-feature-card h3 {
+    font-size: 19.8px;
+  }
+
+  .contact-item,
+  .hours-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .contact-phone,
+  .hours-item .time {
+    font-size: 16.5px;
+  }
+}

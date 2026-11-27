@@ -1,0 +1,308 @@
+/* ============================================================
+   Informacje dla mieszkań – trzy karty informacyjne w jednym rzędzie
+   Paleta: #20352b (ciemna zieleń), #15552f (leśna zieleń),
+           #315d42 (zielona wtórna), #737373 (stłumiona szarość),
+           #D5E3D8 (blada zieleń), #E5EAE6 (obramowanie)
+   ============================================================ */
+
+.ri-section {
+  margin-bottom: 60px;
+  background: #f6f8f6;
+}
+
+.ri-inner {
+  box-sizing: border-box;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ri-header {
+  margin-bottom: 32px;
+}
+
+.ri-eyebrow {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #315d42;
+}
+
+.ri-subtitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 28px;
+  color: #657068;
+}
+
+.ri-section-title {
+  margin: 0 0 12px;
+  font-family: var(--heading);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.1px;
+  color: #20352b;
+}
+
+/* ---------- Grid: trzy równe karty w jednym rzędzie ---------- */
+
+.ri-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch; /* wszystkie karty tej samej wysokości */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ri-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ---------- Karta (tak jak team-section) ---------- */
+
+.ri-card {
+  box-sizing: border-box;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* fill the full height of the grid cell so all cards are equal height */
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #E5EAE6;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(32, 53, 43, 0.04);
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ri-card:hover {
+  /* transform: translateY(-4px); */
+  border-color: #b7d4c0;
+  box-shadow: 0 8px 20px rgba(21, 85, 47, 0.12);
+}
+
+.ri-card:focus-visible {
+  outline: 3px solid #315d42;
+  outline-offset: 3px;
+}
+
+/* ---------- Nagłówek karty: ikona + tytuł ---------- */
+
+.ri-card-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.ri-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #eaf2ec;
+  color: #15552f;
+}
+
+.ri-icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.home-page .ri-heading {
+  margin: 0;
+  min-width: 0;
+  min-height: 56px;
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #20352b;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Datka (tylko karta 1) ---------- */
+
+.ri-card-meta {
+  min-height: 44px;
+}
+
+.ri-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #EDF3ED;
+  color: #315D42;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+}
+
+/* ---------- Wiersze z danymi ---------- */
+
+.ri-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ri-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #E5EAE6;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+/* Karta 1: rola + telefon */
+.ri-role {
+  color: #657068;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.ri-tel {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #15552f;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.ri-tel:hover {
+  color: #15552f;
+  text-decoration: underline;
+}
+
+.ri-tel:focus-visible {
+  outline: 2px solid #315d42;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Karta 2: godziny otwarcia */
+.ri-day {
+  color: #657068;
+  font-weight: 400;
+}
+
+.ri-hours {
+  color: #20352b;
+  font-weight: 600;
+  padding: 2px 10px;
+}
+
+.ri-row--saturday {
+  /* full-width background removed — only the hours pill is highlighted */
+}
+
+.ri-row--saturday .ri-day,
+.ri-row--saturday .ri-hours {
+  color: #315D42;
+}
+
+.ri-row--saturday .ri-hours {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 6px;
+  background: #EDF3ED;
+}
+
+.ri-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2px 10px;
+  border-radius: 6px;
+  background: #F8EEEC;
+  color: #20352b;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Karta 3: ważne numery */
+.ri-service {
+  color: #657068;
+  font-weight: 400;
+}
+
+.ri-note {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 24px;
+  color: #657068;
+}
+
+/* ---------- Responsywnie ---------- */
+
+/* Tablet: 2 karty w rzędzie */
+@media (max-width: 1024px) {
+  .ri-inner {
+    padding: 0 20px;
+  }
+  .ri-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile: 1 karta w rzędzie */
+@media (max-width: 600px) {
+  .ri-inner {
+    padding: 0 16px;
+  }
+  .ri-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .ri-item:last-child {
+    grid-column: auto;
+  }
+  .ri-row {
+    padding: 12px 0;
+  }
+  .ri-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .ri-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ri-tel,
+  .ri-contact-tel {
+    transition: none;
+  }
+}

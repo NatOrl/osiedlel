@@ -1,0 +1,143 @@
+.estate-photos {
+  margin-top: 48px;
+}
+
+.estate-photos-title {
+  font-size: 26.4px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 24px 0;
+}
+
+.estate-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.estate-photo-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #0f4024;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.estate-photo-tile:hover,
+.estate-photo-tile:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+  outline: none;
+}
+
+.estate-photo-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.estate-photo-tile:hover img {
+  transform: scale(1.05);
+}
+
+/* Shown behind the photo; visible only when a category has no photo yet */
+.estate-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #1d6b3d 0%, #0f4024 100%);
+}
+
+.estate-photo-icon {
+  font-size: 44px;
+  line-height: 1;
+}
+
+.estate-photo-soon {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Caption over the lower part of the photo, on a dark green gradient */
+.estate-photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 36px 16px 14px;
+  background: linear-gradient(to bottom, rgba(15, 64, 36, 0) 0%, rgba(15, 64, 36, 0.92) 100%);
+}
+
+.estate-photo-label {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.estate-photo-count {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.estate-photos-cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.estate-photos-button {
+  display: inline-block;
+  background: #ffffff;
+  color: #15552f;
+  font-weight: 600;
+  font-size: 17.6px;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.estate-photos-button:hover {
+  background: #e6f4ea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .estate-photos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .estate-photos {
+    margin-top: 32px;
+  }
+
+  .estate-photos-title {
+    font-size: 22px;
+  }
+
+  .estate-photos-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}

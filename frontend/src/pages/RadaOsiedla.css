@@ -1,0 +1,728 @@
+.layout:has(.rada-osiedla-page) {
+  background: #fbfcfa;
+}
+
+.main-content:has(> .rada-osiedla-page) {
+  box-sizing: border-box;
+  background: #fbfcfa;
+  padding-bottom: 0;
+}
+
+.rada-osiedla-page {
+  --council-heading: #20352b;
+  --council-green: #15552f;
+  --council-secondary: #315d42;
+  --council-text: #737373;
+  --council-light: #eaf1ec;
+  --council-border: #e5eae6;
+  width: 100%;
+  padding: 0;
+  background: #fbfcfa;
+  color: var(--council-text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.rada-osiedla-page,
+.rada-osiedla-page * {
+  box-sizing: border-box;
+}
+
+.rada-osiedla-page h1,
+.rada-osiedla-page h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500;
+  color: var(--council-heading);
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.rada-osiedla-page h2 {
+  margin: 0 0 24px;
+  font-size: 32px;
+  text-align: left;
+}
+
+.rada-osiedla-page h3 {
+  margin: 0;
+  color: var(--council-heading);
+  font-family: var(--sans);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.rada-osiedla-page a {
+  color: inherit;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.rada-osiedla-page a:hover {
+  color: var(--council-green);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.rada-osiedla-page a:focus-visible,
+.rada-osiedla-page .council-contact:focus-visible {
+  outline: 2px solid var(--council-secondary);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+.rada-osiedla-page .council-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.rada-osiedla-page .council-header {
+  width: auto;
+  margin: -40px calc(50% - 50vw) 0px;
+  padding: 80px 0;
+  background: #fbfcfa;
+  border: none;
+  border-radius: 0;
+  text-align: left;
+}
+
+.rada-osiedla-page .council-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.rada-osiedla-page .council-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-family: var(--sans);
+  /* Match the root line height inherited by the documents breadcrumb. */
+  line-height: 1.45rem;
+}
+
+.rada-osiedla-page .council-breadcrumb-link {
+  color: #737373;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.rada-osiedla-page .council-breadcrumb-link:hover {
+  color: #15552f;
+  text-decoration: none;
+}
+
+.rada-osiedla-page .council-breadcrumb-link:focus-visible {
+  color: #15552f;
+  outline: 2px solid #15552f;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.rada-osiedla-page .council-breadcrumb-separator {
+  color: #737373;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.rada-osiedla-page .council-breadcrumb-current {
+  color: #15552f;
+  font-weight: 500;
+}
+
+.rada-osiedla-page .council-header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.rada-osiedla-page .council-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.rada-osiedla-page .council-header h1 {
+  font-family: Georgia, 'Times New Roman', 'Liberation Serif', serif;
+  font-size: 50px;
+  font-weight: 500;
+  color: #20352b;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.rada-osiedla-page .council-header-accent {
+  width: 55px;
+  height: 3px;
+  background: #15552f;
+  border-radius: 2px;
+  margin: 0 0 20px;
+}
+
+.rada-osiedla-page .council-header-description {
+  font-size: 16px;
+  color: #737373;
+  margin: 0;
+  line-height: 1.7;
+  max-width: 650px;
+  font-family: var(--sans);
+  font-weight: 400;
+}
+
+.rada-osiedla-page .council-section {
+  margin-bottom: 56px;
+}
+
+.rada-osiedla-page .council-intro h2 {
+  margin-bottom: 16px;
+  font-size: 30px;
+}
+
+.rada-osiedla-page .council-intro p {
+  padding-left: 22px;
+  border-left: 3px solid #c5d8c9;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.rada-osiedla-page .council-members,
+.rada-osiedla-page .council-contact {
+  background: #fbfcfa;
+}
+
+.rada-osiedla-page .council-members-header,
+.rada-osiedla-page .council-contact-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 34px;
+}
+
+.rada-osiedla-page .council-members-eyebrow,
+.rada-osiedla-page .council-contact-eyebrow,
+.rada-osiedla-page .council-responsibilities-eyebrow {
+  margin-bottom: 12px;
+  color: #15552f;
+  font-family: 'DM Sans', var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.rada-osiedla-page .council-members-header h2,
+.rada-osiedla-page .council-contact-header h2 {
+  margin: 0;
+  color: #20352b;
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(28px, 2.5vw, 34px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.rada-osiedla-page .council-members-description,
+.rada-osiedla-page .council-contact-description {
+  max-width: 390px;
+  color: #737373;
+  font-family: 'DM Sans', var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.rada-osiedla-page .council-members-grid,
+.rada-osiedla-page .council-tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.rada-osiedla-page .council-member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 28px 24px;
+  background: #fff;
+  border: 1px solid var(--council-border);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgb(32 53 43 / 4%);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.rada-osiedla-page .council-member-card:hover,
+.rada-osiedla-page .council-member-card:focus-within {
+  transform: translateY(-4px);
+  border-color: #c5d8c9;
+  box-shadow: 0 8px 24px rgb(32 53 43 / 8%);
+}
+
+.rada-osiedla-page .council-avatar,
+.rada-osiedla-page .council-task-icon,
+.rada-osiedla-page .council-contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--council-light);
+  color: var(--council-green);
+}
+
+.rada-osiedla-page .council-avatar {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+.rada-osiedla-page .council-avatar .council-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.rada-osiedla-page .council-member-role {
+  margin-bottom: 8px;
+  color: var(--council-secondary);
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.rada-osiedla-page .council-member-card h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.rada-osiedla-page .council-member-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  max-width: 100%;
+  padding: 4px 0;
+  font-size: 14px;
+}
+
+.rada-osiedla-page .council-member-contact .council-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.rada-osiedla-page .council-responsibilities {
+  padding-block: 32px;
+  background: #eaf1ec;
+}
+
+/* Full-bleed surfaces with content aligned to the shared main container. */
+.rada-osiedla-page .council-responsibilities,
+.rada-osiedla-page .council-cta {
+  margin-inline: calc(50% - 50vw);
+  padding-inline: max(24px, calc((100vw - 1352px) / 2));
+  border-radius: 0;
+}
+
+.rada-osiedla-page .council-tasks-grid {
+  gap: 20px;
+}
+
+.rada-osiedla-page .council-task-card {
+  min-width: 0;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--council-border);
+  border-radius: 12px;
+}
+
+.rada-osiedla-page .council-task-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+}
+
+.rada-osiedla-page .council-task-icon .council-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.rada-osiedla-page .council-task-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.rada-osiedla-page .council-task-card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.rada-osiedla-page .council-meetings {
+  padding: 40px;
+  background: var(--council-green);
+  color: #d5e3d8;
+  border-radius: 16px;
+}
+
+.rada-osiedla-page .council-meetings-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.rada-osiedla-page .council-meetings h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 30px;
+}
+
+.rada-osiedla-page .council-meetings-description {
+  max-width: 780px;
+}
+
+.rada-osiedla-page .council-meeting-details {
+  display: grid;
+  grid-template-columns: 1.2fr 0.65fr 1.3fr;
+  margin: 28px 0 24px;
+}
+
+.rada-osiedla-page .council-meeting-details > div {
+  min-width: 0;
+  padding: 0 24px;
+}
+
+.rada-osiedla-page .council-meeting-details > div:first-child {
+  padding-left: 0;
+}
+
+.rada-osiedla-page .council-meeting-details > div:last-child {
+  padding-right: 0;
+}
+
+.rada-osiedla-page .council-meeting-details > div + div {
+  border-left: 1px solid rgb(213 227 216 / 25%);
+}
+
+.rada-osiedla-page .council-meeting-details dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.rada-osiedla-page .council-meeting-details .council-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.rada-osiedla-page .council-meeting-details dd {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.rada-osiedla-page .council-meetings-note {
+  padding-top: 20px;
+  border-top: 1px solid rgb(213 227 216 / 25%);
+  font-size: 14px;
+}
+
+.rada-osiedla-page .council-contact {
+  scroll-margin-top: 100px;
+}
+
+.rada-osiedla-page .council-contact-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+}
+
+.rada-osiedla-page .council-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+  padding: 8px 20px;
+}
+
+.rada-osiedla-page .council-contact-item:first-child {
+  padding-left: 0;
+}
+
+.rada-osiedla-page .council-contact-item:last-child {
+  padding-right: 0;
+}
+
+.rada-osiedla-page .council-contact-item + .council-contact-item {
+  border-left: 1px solid var(--council-border);
+}
+
+.rada-osiedla-page .council-contact-item > div {
+  min-width: 0;
+}
+
+.rada-osiedla-page .council-contact-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.rada-osiedla-page .council-contact-item dt {
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.rada-osiedla-page .council-contact-item dd {
+  margin: 0;
+  color: var(--council-heading);
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.rada-osiedla-page .council-contact-item address {
+  font-style: normal;
+}
+
+.rada-osiedla-page .council-cta {
+  padding-block: 60px;
+  background: var(--council-green);
+  color: #e2eae4;
+  text-align: center;
+}
+
+.rada-osiedla-page .council-cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 20px;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 50%;
+  background: transparent;
+  color: #d5e3d8;
+}
+
+.rada-osiedla-page .council-cta-icon .council-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.rada-osiedla-page .council-cta h2 {
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+}
+
+.rada-osiedla-page .council-cta p {
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 17px;
+}
+
+.rada-osiedla-page .council-cta-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  margin-top: 28px;
+  padding: 13px 24px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--council-green);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.rada-osiedla-page .council-cta-button:hover {
+  transform: translateY(-2px);
+  background: var(--council-light);
+  text-decoration: none;
+}
+
+.rada-osiedla-page .council-cta-button:focus-visible {
+  outline-color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .rada-osiedla-page .council-responsibilities,
+  .rada-osiedla-page .council-cta {
+    padding-inline: 20px;
+  }
+
+  .rada-osiedla-page .council-header-inner {
+    padding: 0 20px;
+  }
+
+  .rada-osiedla-page .council-header {
+    margin-top: -24px;
+    padding: 56px 0;
+  }
+
+  .rada-osiedla-page .council-header h1 {
+    font-size: 42px;
+  }
+
+  .rada-osiedla-page .council-header-content {
+    gap: 24px;
+  }
+
+  .rada-osiedla-page .council-members-grid,
+  .rada-osiedla-page .council-tasks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rada-osiedla-page .council-contact-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 0;
+  }
+
+  .rada-osiedla-page .council-contact-item:last-child {
+    grid-column: 1 / -1;
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .rada-osiedla-page .council-members-header,
+  .rada-osiedla-page .council-contact-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .rada-osiedla-page .council-responsibilities,
+  .rada-osiedla-page .council-cta {
+    padding-inline: 16px;
+  }
+
+  .rada-osiedla-page .council-header {
+    margin-top: -20px;
+    margin-bottom: 32px;
+    padding: 44px 0;
+  }
+
+  .rada-osiedla-page .council-header-inner {
+    padding: 0 16px;
+  }
+
+  .rada-osiedla-page .council-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .rada-osiedla-page .council-header h1 {
+    font-size: 36px;
+  }
+
+  .rada-osiedla-page .council-header-accent {
+    margin-bottom: 16px;
+  }
+
+  .rada-osiedla-page .council-header-description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .rada-osiedla-page h2,
+  .rada-osiedla-page .council-intro h2,
+  .rada-osiedla-page .council-meetings h2,
+  .rada-osiedla-page .council-cta h2 {
+    font-size: 28px;
+  }
+
+  .rada-osiedla-page .council-section {
+    margin-bottom: 36px;
+  }
+
+  .rada-osiedla-page .council-members-grid,
+  .rada-osiedla-page .council-tasks-grid,
+  .rada-osiedla-page .council-meeting-details,
+  .rada-osiedla-page .council-contact-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .rada-osiedla-page .council-member-card,
+  .rada-osiedla-page .council-task-card,
+  .rada-osiedla-page .council-meetings {
+    padding: 20px;
+  }
+
+  .rada-osiedla-page .council-responsibilities {
+    padding-block: 20px;
+  }
+
+  .rada-osiedla-page .council-intro p {
+    padding-left: 16px;
+  }
+
+  .rada-osiedla-page .council-meetings-heading {
+    gap: 12px;
+  }
+
+  .rada-osiedla-page .council-meeting-details > div {
+    padding: 0;
+  }
+
+  .rada-osiedla-page .council-meeting-details > div + div {
+    padding-top: 16px;
+    border-left: 0;
+    border-top: 1px solid rgb(213 227 216 / 25%);
+  }
+
+  .rada-osiedla-page .council-meeting-details dt {
+    margin-bottom: 6px;
+  }
+
+  .rada-osiedla-page .council-contact-item {
+    padding: 0;
+  }
+
+  .rada-osiedla-page .council-contact-item + .council-contact-item {
+    padding-top: 16px;
+    border-left: 0;
+    border-top: 1px solid var(--council-border);
+  }
+
+  .rada-osiedla-page .council-cta {
+    padding-block: 48px;
+  }
+
+  .rada-osiedla-page .council-cta p {
+    font-size: 16px;
+  }
+
+  .rada-osiedla-page .council-cta-button {
+    padding: 13px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rada-osiedla-page *,
+  .rada-osiedla-page *::before,
+  .rada-osiedla-page *::after {
+    transition: none;
+  }
+
+  .rada-osiedla-page .council-member-card:hover,
+  .rada-osiedla-page .council-member-card:focus-within,
+  .rada-osiedla-page .council-cta-button:hover {
+    transform: none;
+  }
+}
